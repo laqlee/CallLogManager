@@ -1,0 +1,20 @@
+<h2>New Call</h2>
+
+<form #addCallForm="ngForm" class="pure-form pure-form-stacked">
+    <fieldset>
+        <label for="caller">Caller</label>
+        <input type="text" id="caller" name="caller" required [(ngModel)]="addCallCommand.caller" />
+
+        <label for="title">Title</label>
+        <input type="text" id="title" name="title" required [(ngModel)]="addCallCommand.title" />
+
+        <label for="problem">Problem</label>
+        <textarea id="problem" name="problem" rows="5" cols="50" required [(ngModel)]="addCallCommand.problem"></textarea>
+
+        <label for="solution">Solution</label>
+        <textarea id="solution" name="solution" rows="5" cols="50" required [(ngModel)]="addCallCommand.solution"></textarea>
+
+        <button class="pure-button pure-button-primary" style="margin-right: 25px" [disabled]="!addCallForm.valid" (click)="save()">Save</button>
+        <a [routerLink]="['/call-list']">Cancel</a>
+    </fieldset>
+</form>

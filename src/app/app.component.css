@@ -1,0 +1,9 @@
+.header {
+    margin: 0;
+    padding: 5px 15px;
+    background: linear-gradient(90deg, #ACCDEE, #0066CC);
+}
+
+.body {
+    padding: 0 15px 15px 15px;
+}

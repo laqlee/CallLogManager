@@ -1,0 +1,29 @@
+<h2>Search Calls</h2>
+
+<form class="pure-form" style="margin-bottom: 15px">
+    <input type="text" style="width: 100%" placeholder="Search by Caller or Title" (keyup)="searchTitle($event)" />
+</form>
+
+<div style="float: right"><a [routerLink]="['/add-call']">Add New Call</a></div>
+
+<table class="pure-table pure-table-bordered pure-table-striped" style="width: 100%">
+    <thead>
+        <tr>
+            <th>Date</th>
+            <th>Caller</th>
+            <th>Title</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let call of calls">
+            <td>{{call.callDate | date: 'shortDate'}}</td>
+            <td>{{call.caller}}</td>
+            <td>{{call.title}}</td>
+            <td>{{call.statusId | status}}</td>
+        </tr>
+    </tbody>
+</table>
+
+<div style="text-align: right">{{calls.length}} results found</div>
